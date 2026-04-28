@@ -14,19 +14,13 @@
       min-height: 100vh;
     }
 
-    /* HEADER */
+    /* ── HEADER ───────────────────────── */
     .app-header {
       background: linear-gradient(135deg, #16263d, #1e3552);
-      color: #fff;
-      height: 60px;
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      color: #fff; height: 60px; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
     }
     .brand { display: flex; align-items: center; gap: 12px; }
     .brand-icon {
@@ -36,116 +30,155 @@
     }
     .brand-sub  { font-size: 0.68rem; opacity: 0.5; text-transform: uppercase; letter-spacing: 0.8px; }
     .brand-name { font-size: 1.05rem; font-weight: 700; }
-
     .new-cat-btn {
       background: #3d72b0; color: #fff; border: none; border-radius: 8px;
-      padding: 9px 18px; font-size: 0.9rem; font-weight: 600; cursor: pointer;
-      letter-spacing: 0.2px;
+      padding: 9px 18px; font-size: 0.875rem; font-weight: 600; cursor: pointer;
     }
     .new-cat-btn:hover { background: #2e5f9a; }
 
-    /* MAIN */
-    .main { max-width: 860px; margin: 0 auto; padding: 28px 16px 80px; }
+    /* ── MAIN ─────────────────────────── */
+    .main { max-width: 880px; margin: 0 auto; padding: 28px 16px 80px; }
 
     .empty-state { text-align: center; padding: 80px 24px; color: #9ca3af; }
     .empty-icon  { font-size: 4rem; margin-bottom: 14px; }
     .empty-state h2   { font-size: 1.1rem; color: #6b7280; font-weight: 600; margin-bottom: 6px; }
     .empty-state span { font-size: 0.875rem; }
 
-    /* CATEGORY CARD */
+    /* ── CATEGORY CARD ────────────────── */
     .cat-card {
-      background: #fff; border-radius: 12px; margin-bottom: 20px;
+      background: #fff; border-radius: 12px; margin-bottom: 22px;
       border: 1px solid #e5e7eb; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
       overflow: hidden;
     }
     .cat-card.is-urgent { border-color: #fca5a5; box-shadow: 0 2px 12px rgba(239,68,68,0.1); }
 
+    /* Category header bar */
     .cat-head {
       display: flex; align-items: center; gap: 10px;
-      padding: 14px 18px; background: #f8f9fa; border-bottom: 1px solid #efefef;
+      padding: 14px 20px; border-bottom: 1px solid #efefef;
     }
     .cat-dot  { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
-    .cat-name { font-size: 0.92rem; font-weight: 700; color: #111; flex: 1; }
-    .cat-count {
+    .cat-name { font-size: 0.95rem; font-weight: 800; color: #111; flex: 1; letter-spacing: 0.1px; text-transform: uppercase; }
+    .cat-total {
       font-size: 0.75rem; font-weight: 600; padding: 2px 10px;
       border-radius: 12px; background: #eef2f7; color: #5a7a9e;
     }
-    .cat-count.urgent { background: #fee2e2; color: #dc2626; }
-    .cat-del {
-      background: none; border: none; color: #d1d5db; font-size: 1.1rem;
+    .cat-total.urgent { background: #fee2e2; color: #dc2626; }
+    .cat-del-btn {
+      background: none; border: none; color: #d1d5db; font-size: 1rem;
       cursor: pointer; padding: 2px 6px; border-radius: 4px; line-height: 1;
     }
-    .cat-del:hover { color: #ef4444; background: #fee2e2; }
+    .cat-del-btn:hover { color: #ef4444; background: #fee2e2; }
 
-    /* TODO ITEMS */
+    /* ── JOB GROUP ────────────────────── */
+    .job-group { border-bottom: 1px solid #f0f0f0; }
+    .job-group:last-of-type { border-bottom: none; }
+
+    .job-head {
+      display: flex; align-items: center; gap: 8px;
+      padding: 11px 20px 9px;
+      background: #f7f8fa;
+      border-bottom: 1px solid #eeeeee;
+    }
+    .job-label {
+      font-size: 0.88rem; font-weight: 700; color: #1e3552; flex: 1;
+    }
+    .job-pending {
+      font-size: 0.72rem; font-weight: 600; color: #9ca3af;
+    }
+    .job-del-btn {
+      background: none; border: none; color: #d1d5db; font-size: 0.9rem;
+      cursor: pointer; padding: 1px 5px; border-radius: 4px; line-height: 1;
+    }
+    .job-del-btn:hover { color: #ef4444; background: #fee2e2; }
+
+    /* ── TODO ITEM ────────────────────── */
     .todo-item {
       display: flex; align-items: flex-start; gap: 12px;
-      padding: 12px 18px; border-bottom: 1px solid #f5f5f5;
+      padding: 10px 20px 10px 28px;
+      border-bottom: 1px solid #f8f8f8;
+      transition: background 0.1s;
     }
     .todo-item:hover { background: #fafbfc; }
-    .todo-item.done  { opacity: 0.4; }
+    .todo-item.done  { opacity: 0.38; }
     .todo-item.done .t-desc { text-decoration: line-through; color: #9ca3af; }
 
     .checkbox {
-      width: 22px; height: 22px; border-radius: 50%;
-      border: 2px solid #d1d5db; flex-shrink: 0; margin-top: 1px;
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 2px solid #d1d5db; flex-shrink: 0; margin-top: 2px;
       cursor: pointer; display: flex; align-items: center; justify-content: center;
       background: #fff; transition: all 0.2s; user-select: none;
     }
     .checkbox:hover   { border-color: #3d72b0; }
     .checkbox.checked { background: #3d72b0; border-color: #3d72b0; }
-    .checkbox.checked::after { content: '✓'; color: #fff; font-size: 12px; font-weight: 800; }
+    .checkbox.checked::after { content: '✓'; color: #fff; font-size: 11px; font-weight: 800; }
 
     .t-body  { flex: 1; min-width: 0; }
-    .t-desc  { font-size: 0.9rem; color: #111; line-height: 1.45; word-break: break-word; }
-    .t-meta  { margin-top: 5px; }
-    .t-badge {
-      display: inline-block; font-size: 0.72rem; font-weight: 600;
-      color: #3d72b0; background: #eff6ff; padding: 2px 9px; border-radius: 10px;
+    .t-desc  { font-size: 0.875rem; color: #111; line-height: 1.4; word-break: break-word; }
+    .t-who   {
+      display: inline-block; margin-top: 4px;
+      font-size: 0.7rem; font-weight: 600;
+      color: #3d72b0; background: #eff6ff; padding: 1px 8px; border-radius: 10px;
     }
     .t-del {
       opacity: 0; background: none; border: none; color: #c4c4c4;
-      cursor: pointer; font-size: 1rem; align-self: center; padding: 2px 4px;
+      cursor: pointer; font-size: 0.9rem; align-self: center; padding: 2px 4px;
       transition: opacity 0.15s, color 0.15s;
     }
     .todo-item:hover .t-del { opacity: 1; }
     .t-del:hover { color: #ef4444; }
 
     .done-divider {
-      padding: 6px 18px; font-size: 0.72rem; font-weight: 600;
-      color: #9ca3af; background: #f9fafb; letter-spacing: 0.4px;
-      text-transform: uppercase; border-bottom: 1px solid #f0f0f0;
+      padding: 5px 20px 5px 28px; font-size: 0.7rem; font-weight: 600;
+      color: #b0b8c4; background: #f9fafb; text-transform: uppercase; letter-spacing: 0.4px;
     }
 
-    /* ADD ROW */
-    .add-row {
+    /* ── ADD ITEM ROW ─────────────────── */
+    .add-item-row {
       display: flex; align-items: center; gap: 8px;
-      padding: 10px 18px; background: #f9fafb;
+      padding: 8px 20px 8px 28px; background: #fafafa;
     }
-    .add-plus  { color: #adb5bd; font-size: 1.2rem; user-select: none; }
-    .add-desc  {
+    .add-plus { color: #bdc3cb; font-size: 1rem; user-select: none; }
+    .add-desc {
       flex: 1; border: none; background: transparent; outline: none;
-      font-size: 0.875rem; color: #374151; padding: 4px 0;
+      font-size: 0.85rem; color: #374151; padding: 4px 0;
     }
-    .add-desc::placeholder { color: #bdc3cb; }
+    .add-desc::placeholder { color: #c0c7d0; }
     .add-who {
-      border: 1px solid #e5e7eb; border-radius: 6px; padding: 5px 8px;
-      font-size: 0.8rem; color: #374151; background: #fff; outline: none; cursor: pointer;
+      border: 1px solid #e5e7eb; border-radius: 6px; padding: 4px 7px;
+      font-size: 0.78rem; color: #374151; background: #fff; outline: none; cursor: pointer;
     }
     .add-go {
-      background: #3d72b0; color: #fff; border: none; border-radius: 7px;
-      padding: 6px 15px; font-size: 0.82rem; font-weight: 700; cursor: pointer;
-      white-space: nowrap;
+      background: #3d72b0; color: #fff; border: none; border-radius: 6px;
+      padding: 5px 13px; font-size: 0.8rem; font-weight: 700; cursor: pointer; white-space: nowrap;
     }
     .add-go:hover { background: #2e5f9a; }
 
-    /* MODAL OVERLAY */
+    /* ── ADD JOB ROW ──────────────────── */
+    .add-job-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 20px; background: #f4f6f8;
+      border-top: 1px dashed #e2e8f0;
+    }
+    .add-job-input {
+      flex: 1; border: 1px solid #e2e8f0; border-radius: 7px;
+      padding: 7px 12px; font-size: 0.85rem; color: #111; outline: none; background: #fff;
+    }
+    .add-job-input:focus { border-color: #3d72b0; }
+    .add-job-input::placeholder { color: #bdc3cb; }
+    .add-job-go {
+      background: #e8f0fb; color: #3d72b0; border: 1px solid #c7daf5;
+      border-radius: 7px; padding: 7px 14px; font-size: 0.82rem;
+      font-weight: 700; cursor: pointer; white-space: nowrap;
+    }
+    .add-job-go:hover { background: #d0e4f7; }
+
+    /* ── MODAL ────────────────────────── */
     .overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.5);
       z-index: 999; display: none; align-items: center; justify-content: center;
     }
     .overlay.show { display: flex; }
-
     .modal {
       background: #fff; border-radius: 14px; padding: 26px;
       width: 430px; max-width: 96vw; max-height: 92vh; overflow-y: auto;
@@ -154,50 +187,49 @@
     .modal h2 { font-size: 1rem; font-weight: 700; color: #111; margin-bottom: 18px; }
 
     .preset-row {
-      display: flex; align-items: center; gap: 11px;
-      padding: 11px 14px; border-radius: 9px; cursor: pointer;
-      margin-bottom: 5px; border: 1.5px solid transparent;
-      user-select: none; transition: all 0.12s;
+      display: flex; align-items: center; gap: 11px; padding: 11px 14px;
+      border-radius: 9px; cursor: pointer; margin-bottom: 5px;
+      border: 1.5px solid transparent; user-select: none; transition: all 0.12s;
     }
-    .preset-row:hover   { background: #f3f4f6; border-color: #e2e8f0; }
-    .preset-row.added   { opacity: 0.35; cursor: default; pointer-events: none; }
+    .preset-row:hover { background: #f3f4f6; border-color: #e2e8f0; }
+    .preset-row.added { opacity: 0.35; cursor: default; pointer-events: none; }
     .p-dot   { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0; }
     .p-label { font-size: 0.9rem; font-weight: 500; color: #1a1a1a; flex: 1; }
     .p-added { font-size: 0.72rem; color: #9ca3af; font-style: italic; }
 
     .or-line {
-      display: flex; align-items: center; gap: 10px;
-      margin: 18px 0 14px; font-size: 0.75rem; font-weight: 600;
-      color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px;
+      display: flex; align-items: center; gap: 10px; margin: 18px 0 14px;
+      font-size: 0.75rem; font-weight: 600; color: #9ca3af;
+      text-transform: uppercase; letter-spacing: 0.5px;
     }
     .or-line::before, .or-line::after { content:''; flex:1; height:1px; background:#e5e7eb; }
 
     .custom-box { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; }
-    .custom-box label { display: block; font-size: 0.75rem; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .custom-box label {
+      display: block; font-size: 0.75rem; font-weight: 700; color: #6b7280;
+      text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px;
+    }
     .custom-input {
       width: 100%; border: 1.5px solid #e2e8f0; border-radius: 8px;
       padding: 9px 12px; font-size: 0.9rem; color: #111; outline: none; margin-bottom: 14px;
     }
     .custom-input:focus { border-color: #3d72b0; }
-
     .swatch-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
     .swatch {
       width: 30px; height: 30px; border-radius: 50%; cursor: pointer;
       border: 3px solid transparent; transition: transform 0.15s, border-color 0.15s;
     }
-    .swatch:hover    { transform: scale(1.1); }
-    .swatch.sel      { border-color: #111; transform: scale(1.15); }
-
+    .swatch:hover { transform: scale(1.1); }
+    .swatch.sel   { border-color: #111; transform: scale(1.15); }
     .create-btn {
       width: 100%; background: #3d72b0; color: #fff; border: none;
       border-radius: 8px; padding: 10px; font-size: 0.9rem; font-weight: 700; cursor: pointer;
     }
     .create-btn:hover { background: #2e5f9a; }
-
     .cancel-btn {
       width: 100%; margin-top: 10px; padding: 10px;
-      border: 1.5px solid #e5e7eb; background: #fff; border-radius: 9px;
-      font-size: 0.875rem; color: #6b7280; cursor: pointer; font-weight: 500;
+      border: 1.5px solid #e5e7eb; background: #fff;
+      border-radius: 9px; font-size: 0.875rem; color: #6b7280; cursor: pointer; font-weight: 500;
     }
     .cancel-btn:hover { background: #f9fafb; }
 
@@ -205,6 +237,7 @@
       .app-header { padding: 0 14px; }
       .new-cat-btn { padding: 8px 12px; font-size: 0.82rem; }
       .main { padding: 16px 10px 60px; }
+      .todo-item, .add-item-row, .done-divider { padding-left: 16px; }
     }
   </style>
 </head>
@@ -234,9 +267,7 @@
   <div class="modal">
     <h2>Add a Category</h2>
     <div id="presetList"></div>
-
     <div class="or-line">or create your own</div>
-
     <div class="custom-box">
       <label>Category Name</label>
       <input class="custom-input" id="customName" type="text" placeholder="e.g. Punch List, Follow-Up, Warranty…" maxlength="60" />
@@ -244,31 +275,47 @@
       <div class="swatch-row" id="swatches"></div>
       <button class="create-btn" id="createBtn">+ Create Category</button>
     </div>
-
     <button class="cancel-btn" id="closeModalBtn">Cancel</button>
   </div>
 </div>
 
 <script>
-/* ====================================================
-   DATA — stored in localStorage so it always works
-==================================================== */
-const STORE_KEY = 'iconTodoV1';
+/* ═══════════════════════════════════════════
+   STORAGE  —  localStorage, always works
+═══════════════════════════════════════════ */
+var STORE = 'iconTodoV2';
 
-function load() {
-  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || { cats: {}, items: {} }; }
-  catch(e) { return { cats: {}, items: {} }; }
-}
-function save(data) {
-  localStorage.setItem(STORE_KEY, JSON.stringify(data));
+function dbLoad() {
+  try { return JSON.parse(localStorage.getItem(STORE)) || seed(); }
+  catch(e) { return seed(); }
 }
 
-let DB = load();
+function dbSave() { localStorage.setItem(STORE, JSON.stringify(DB)); }
 
-/* ====================================================
-   PRESETS
-==================================================== */
-const PRESETS = [
+/* Pre-seed with the example data so the app isn't empty on first load */
+function seed() {
+  var now = Date.now();
+  return {
+    cats: {
+      'active_job': { label: 'Active Job', color: '#3d72b0', order: 1 }
+    },
+    groups: {
+      'g_carol': { catId: 'active_job', label: 'Carol Myers', order: 0, createdAt: now }
+    },
+    items: {
+      'i_1': { groupId: 'g_carol', catId: 'active_job', desc: 'Revise Permit',    who: 'All', done: false, doneAt: null, createdAt: now },
+      'i_2': { groupId: 'g_carol', catId: 'active_job', desc: 'Finish Tile Work', who: 'All', done: false, doneAt: null, createdAt: now + 1 },
+      'i_3': { groupId: 'g_carol', catId: 'active_job', desc: 'Measure',          who: 'All', done: false, doneAt: null, createdAt: now + 2 }
+    }
+  };
+}
+
+var DB = dbLoad();
+
+/* ═══════════════════════════════════════════
+   CONSTANTS
+═══════════════════════════════════════════ */
+var PRESETS = [
   { id:'urgent',      label:'Urgent — Requires Immediate Attention', color:'#ef4444', order:0 },
   { id:'active_job',  label:'Active Job',                            color:'#3d72b0', order:1 },
   { id:'field_ops',   label:'Field Operations Item',                 color:'#0891b2', order:2 },
@@ -277,48 +324,42 @@ const PRESETS = [
   { id:'admin',       label:'Admin Item',                            color:'#374151', order:5 },
 ];
 
-const COLORS = [
+var COLORS = [
   '#3d72b0','#0891b2','#059669','#d97706',
-  '#8b5cf6','#ef4444','#374151','#6b7280',
-  '#1d4ed8','#be185d',
+  '#8b5cf6','#ef4444','#374151','#6b7280','#1d4ed8','#be185d'
 ];
 
-const WHO = ['Rob','Bryan','Joe','All'];
+var WHO = ['Rob','Bryan','Joe','All'];
+var pickedColor = COLORS[0];
 
-let pickedColor = COLORS[0];
-
-/* ====================================================
+/* ═══════════════════════════════════════════
    MODAL
-==================================================== */
-const overlay      = document.getElementById('overlay');
-const presetList   = document.getElementById('presetList');
-const swatchesEl   = document.getElementById('swatches');
-const customNameEl = document.getElementById('customName');
+═══════════════════════════════════════════ */
+var overlay    = document.getElementById('overlay');
+var presetList = document.getElementById('presetList');
+var swatchesEl = document.getElementById('swatches');
+var customName = document.getElementById('customName');
 
 document.getElementById('openModalBtn').onclick  = openModal;
 document.getElementById('closeModalBtn').onclick = closeModal;
-document.getElementById('createBtn').onclick     = createCustom;
+document.getElementById('createBtn').onclick     = createCustomCat;
 overlay.onclick = function(e) { if (e.target === overlay) closeModal(); };
-customNameEl.onkeydown = function(e) { if (e.key === 'Enter') createCustom(); };
+customName.onkeydown = function(e) { if (e.key === 'Enter') createCustomCat(); };
 
 function openModal() {
-  // Build preset rows
   presetList.innerHTML = '';
   PRESETS.forEach(function(p) {
     var exists = !!DB.cats[p.id];
-    var row    = document.createElement('div');
+    var row = document.createElement('div');
     row.className = 'preset-row' + (exists ? ' added' : '');
     row.innerHTML =
       '<div class="p-dot" style="background:' + p.color + '"></div>' +
       '<span class="p-label">' + p.label + '</span>' +
       (exists ? '<span class="p-added">Added</span>' : '');
-    if (!exists) {
-      row.onclick = function() { addPreset(p); };
-    }
+    if (!exists) { row.onclick = function() { addPresetCat(p); }; }
     presetList.appendChild(row);
   });
 
-  // Build color swatches
   swatchesEl.innerHTML = '';
   COLORS.forEach(function(c) {
     var sw = document.createElement('div');
@@ -332,179 +373,236 @@ function openModal() {
     swatchesEl.appendChild(sw);
   });
 
-  customNameEl.value = '';
+  customName.value = '';
   overlay.classList.add('show');
-  setTimeout(function(){ customNameEl.focus(); }, 100);
+  setTimeout(function(){ customName.focus(); }, 80);
 }
 
-function closeModal() {
-  overlay.classList.remove('show');
-}
+function closeModal() { overlay.classList.remove('show'); }
 
-function addPreset(p) {
+function addPresetCat(p) {
   DB.cats[p.id] = { label: p.label, color: p.color, order: p.order };
-  save(DB);
-  closeModal();
-  render();
+  dbSave(); closeModal(); render();
 }
 
-function createCustom() {
-  var name = customNameEl.value.trim();
-  if (!name) { customNameEl.focus(); return; }
-  var id = 'c_' + Date.now();
-  var order = 100 + Object.keys(DB.cats).length;
-  DB.cats[id] = { label: name, color: pickedColor, order: order };
-  save(DB);
-  closeModal();
-  render();
+function createCustomCat() {
+  var name = customName.value.trim();
+  if (!name) { customName.focus(); return; }
+  var id = 'cat_' + Date.now();
+  DB.cats[id] = { label: name, color: pickedColor, order: 100 + Object.keys(DB.cats).length };
+  dbSave(); closeModal(); render();
 }
 
-/* ====================================================
+/* ═══════════════════════════════════════════
+   GROUPS (job names within a category)
+═══════════════════════════════════════════ */
+function addGroup(catId) {
+  var input = document.getElementById('gInput_' + catId);
+  var name  = input.value.trim();
+  if (!name) { input.focus(); return; }
+  var id = 'g_' + Date.now();
+  var order = Object.values(DB.groups).filter(function(g){ return g.catId === catId; }).length;
+  DB.groups[id] = { catId: catId, label: name, order: order, createdAt: Date.now() };
+  dbSave(); input.value = ''; render();
+}
+
+function deleteGroup(groupId) {
+  var g = DB.groups[groupId];
+  if (!confirm('Remove "' + g.label + '" and all its items?')) return;
+  delete DB.groups[groupId];
+  Object.keys(DB.items).forEach(function(id){
+    if (DB.items[id].groupId === groupId) delete DB.items[id];
+  });
+  dbSave(); render();
+}
+
+/* ═══════════════════════════════════════════
    ITEMS
-==================================================== */
-function addItem(catId) {
-  var descEl = document.getElementById('d_' + catId);
-  var whoEl  = document.getElementById('w_' + catId);
+═══════════════════════════════════════════ */
+function addItem(groupId, catId) {
+  var descEl = document.getElementById('iDesc_' + groupId);
+  var whoEl  = document.getElementById('iWho_'  + groupId);
   var desc   = descEl.value.trim();
   if (!desc) { descEl.focus(); return; }
-  var id = 'i_' + Date.now() + '_' + Math.random().toString(36).slice(2,6);
-  DB.items[id] = {
-    catId:       catId,
-    desc:        desc,
-    who:         whoEl.value,
-    done:        false,
-    doneAt:      null,
-    createdAt:   Date.now()
-  };
-  save(DB);
-  descEl.value = '';
-  descEl.focus();
-  render();
+  var id = 'i_' + Date.now() + '_' + Math.random().toString(36).slice(2,5);
+  DB.items[id] = { groupId: groupId, catId: catId, desc: desc, who: whoEl.value,
+                   done: false, doneAt: null, createdAt: Date.now() };
+  dbSave(); descEl.value = ''; descEl.focus(); render();
 }
 
 function toggleItem(id) {
   if (!DB.items[id]) return;
-  var wasDone   = DB.items[id].done;
-  DB.items[id].done   = !wasDone;
-  DB.items[id].doneAt = !wasDone ? Date.now() : null;
-  save(DB);
-  render();
+  DB.items[id].done  = !DB.items[id].done;
+  DB.items[id].doneAt = DB.items[id].done ? Date.now() : null;
+  dbSave(); render();
 }
 
 function deleteItem(id) {
-  delete DB.items[id];
-  save(DB);
-  render();
+  delete DB.items[id]; dbSave(); render();
 }
 
 function deleteCat(catId) {
   var cat = DB.cats[catId];
-  if (!cat) return;
-  if (!confirm('Remove "' + cat.label + '" and all its items?')) return;
+  if (!confirm('Remove category "' + cat.label + '" and all its jobs and items?')) return;
   delete DB.cats[catId];
-  Object.keys(DB.items).forEach(function(id) {
+  Object.keys(DB.groups).forEach(function(gid){
+    if (DB.groups[gid].catId === catId) delete DB.groups[gid];
+  });
+  Object.keys(DB.items).forEach(function(id){
     if (DB.items[id].catId === catId) delete DB.items[id];
   });
-  save(DB);
-  render();
+  dbSave(); render();
 }
 
-/* ====================================================
+/* ═══════════════════════════════════════════
    RENDER
-==================================================== */
+═══════════════════════════════════════════ */
 function render() {
   var app     = document.getElementById('app');
   var emptyEl = document.getElementById('emptyMsg');
 
-  var sortedCats = Object.keys(DB.cats).sort(function(a,b){
-    return (DB.cats[a].order || 0) - (DB.cats[b].order || 0);
+  var sortedCatIds = Object.keys(DB.cats).sort(function(a,b){
+    return (DB.cats[a].order||0) - (DB.cats[b].order||0);
   });
 
-  emptyEl.style.display = sortedCats.length === 0 ? 'block' : 'none';
+  emptyEl.style.display = sortedCatIds.length === 0 ? 'block' : 'none';
 
-  // Remove cards that no longer exist
+  /* Remove stale cards */
   app.querySelectorAll('.cat-card').forEach(function(el){
     if (!DB.cats[el.dataset.cid]) el.remove();
   });
 
-  sortedCats.forEach(function(catId) {
+  sortedCatIds.forEach(function(catId) {
     var cat  = DB.cats[catId];
     var card = document.getElementById('card_' + catId);
     if (!card) {
       card = document.createElement('div');
-      card.id          = 'card_' + catId;
+      card.id = 'card_' + catId;
       card.dataset.cid = catId;
-      card.className   = 'cat-card' + (catId === 'urgent' ? ' is-urgent' : '');
+      card.className = 'cat-card' + (catId === 'urgent' ? ' is-urgent' : '');
       app.appendChild(card);
     }
     buildCard(card, catId, cat);
   });
 
-  // Re-sort DOM order
-  var cards = Array.from(app.querySelectorAll('.cat-card'));
-  cards.sort(function(a,b){
-    return (DB.cats[a.dataset.cid]?.order||0) - (DB.cats[b.dataset.cid]?.order||0);
-  });
-  cards.forEach(function(c){ app.appendChild(c); });
+  /* Re-sort DOM */
+  Array.from(app.querySelectorAll('.cat-card'))
+    .sort(function(a,b){
+      return (DB.cats[a.dataset.cid]?.order||0) - (DB.cats[b.dataset.cid]?.order||0);
+    })
+    .forEach(function(c){ app.appendChild(c); });
 }
 
 function buildCard(card, catId, cat) {
-  var allForCat = Object.keys(DB.items)
-    .filter(function(id){ return DB.items[id].catId === catId; });
+  /* All groups for this category, sorted */
+  var groups = Object.keys(DB.groups)
+    .filter(function(gid){ return DB.groups[gid].catId === catId; })
+    .sort(function(a,b){ return (DB.groups[a].order||0) - (DB.groups[b].order||0); });
 
-  var pending = allForCat
-    .filter(function(id){ return !DB.items[id].done; })
-    .sort(function(a,b){ return DB.items[a].createdAt - DB.items[b].createdAt; });
-
-  var done = allForCat
-    .filter(function(id){ return DB.items[id].done; })
-    .sort(function(a,b){ return (DB.items[b].doneAt||0) - (DB.items[a].doneAt||0); });
+  /* Count all pending items in this category */
+  var totalPending = Object.values(DB.items).filter(function(it){
+    return it.catId === catId && !it.done;
+  }).length;
 
   var isUrgent = catId === 'urgent';
 
-  // Header
-  var html = '<div class="cat-head">' +
+  var html = '';
+
+  /* ── Category header ── */
+  html += '<div class="cat-head">' +
     '<div class="cat-dot" style="background:' + cat.color + '"></div>' +
     '<span class="cat-name">' + esc(cat.label) + '</span>' +
-    (pending.length > 0
-      ? '<span class="cat-count' + (isUrgent ? ' urgent' : '') + '">' + pending.length + ' pending</span>'
+    (totalPending > 0
+      ? '<span class="cat-total' + (isUrgent ? ' urgent' : '') + '">' + totalPending + ' pending</span>'
       : '') +
-    '<button class="cat-del" data-cid="' + catId + '">✕</button>' +
+    '<button class="cat-del-btn" data-cid="' + catId + '">✕</button>' +
     '</div>';
 
-  // Pending items
-  pending.forEach(function(id){ html += itemRow(id, DB.items[id]); });
+  /* ── Job groups ── */
+  groups.forEach(function(groupId) {
+    var group = DB.groups[groupId];
 
-  // Done items
-  if (done.length > 0) {
-    html += '<div class="done-divider">✓ Completed (' + done.length + ')</div>';
-    done.forEach(function(id){ html += itemRow(id, DB.items[id]); });
-  }
+    var pending = Object.keys(DB.items).filter(function(id){
+      return DB.items[id].groupId === groupId && !DB.items[id].done;
+    }).length;
 
-  // Add row
-  html += '<div class="add-row">' +
-    '<span class="add-plus">+</span>' +
-    '<input class="add-desc" id="d_' + catId + '" type="text" placeholder="Add an item…" />' +
-    '<select class="add-who" id="w_' + catId + '">' +
-    WHO.map(function(w){ return '<option>' + w + '</option>'; }).join('') +
-    '</select>' +
-    '<button class="add-go" data-cid="' + catId + '">Add</button>' +
+    var doneItems = Object.keys(DB.items).filter(function(id){
+      return DB.items[id].groupId === groupId && DB.items[id].done;
+    }).sort(function(a,b){ return (DB.items[b].doneAt||0) - (DB.items[a].doneAt||0); });
+
+    var pendingItems = Object.keys(DB.items).filter(function(id){
+      return DB.items[id].groupId === groupId && !DB.items[id].done;
+    }).sort(function(a,b){ return DB.items[a].createdAt - DB.items[b].createdAt; });
+
+    html += '<div class="job-group">';
+
+    /* Job header */
+    html += '<div class="job-head">' +
+      '<span class="job-label">📋 ' + esc(group.label) + '</span>' +
+      (pending > 0 ? '<span class="job-pending">' + pending + ' remaining</span>' : '') +
+      '<button class="job-del-btn" data-gid="' + groupId + '">✕</button>' +
+      '</div>';
+
+    /* Pending items */
+    pendingItems.forEach(function(id){ html += itemRow(id, DB.items[id]); });
+
+    /* Completed items */
+    if (doneItems.length > 0) {
+      html += '<div class="done-divider">✓ Done (' + doneItems.length + ')</div>';
+      doneItems.forEach(function(id){ html += itemRow(id, DB.items[id]); });
+    }
+
+    /* Add item row */
+    html += '<div class="add-item-row">' +
+      '<span class="add-plus">+</span>' +
+      '<input class="add-desc" id="iDesc_' + groupId + '" type="text" placeholder="Add a task…" />' +
+      '<select class="add-who" id="iWho_' + groupId + '">' +
+      WHO.map(function(w){ return '<option>' + w + '</option>'; }).join('') +
+      '</select>' +
+      '<button class="add-go" data-gid="' + groupId + '" data-cid="' + catId + '">Add</button>' +
+      '</div>';
+
+    html += '</div>'; /* end job-group */
+  });
+
+  /* ── Add job row ── */
+  html += '<div class="add-job-row">' +
+    '<input class="add-job-input" id="gInput_' + catId + '" type="text" placeholder="+ Add job or group name (e.g. Carol Myers, Smith Residence…)" />' +
+    '<button class="add-job-go" data-cid="' + catId + '">Add</button>' +
     '</div>';
 
   card.innerHTML = html;
 
-  // Bind events
-  card.querySelector('.cat-del').onclick = function(){ deleteCat(this.dataset.cid); };
-  card.querySelector('.add-go').onclick  = function(){ addItem(this.dataset.cid); };
-  card.querySelector('.add-desc').onkeydown = function(e){
-    if (e.key === 'Enter') addItem(catId);
-  };
+  /* ── Bind events ── */
+  card.querySelector('.cat-del-btn').onclick = function(){ deleteCat(this.dataset.cid); };
+
+  card.querySelectorAll('.job-del-btn').forEach(function(btn){
+    btn.onclick = function(){ deleteGroup(this.dataset.gid); };
+  });
+
+  card.querySelectorAll('.add-go').forEach(function(btn){
+    btn.onclick = function(){ addItem(this.dataset.gid, this.dataset.cid); };
+  });
+
+  card.querySelectorAll('.add-desc').forEach(function(input){
+    var gid = input.id.replace('iDesc_','');
+    var cid = catId;
+    input.onkeydown = function(e){ if (e.key === 'Enter') addItem(gid, cid); };
+  });
+
   card.querySelectorAll('.checkbox').forEach(function(el){
     el.onclick = function(){ toggleItem(this.dataset.iid); };
   });
+
   card.querySelectorAll('.t-del').forEach(function(el){
     el.onclick = function(){ deleteItem(this.dataset.iid); };
   });
+
+  var addJobBtn = card.querySelector('.add-job-go');
+  addJobBtn.onclick = function(){ addGroup(this.dataset.cid); };
+  card.querySelector('.add-job-input').onkeydown = function(e){
+    if (e.key === 'Enter') addGroup(catId);
+  };
 }
 
 function itemRow(id, item) {
@@ -512,7 +610,7 @@ function itemRow(id, item) {
     '<div class="checkbox' + (item.done ? ' checked' : '') + '" data-iid="' + id + '"></div>' +
     '<div class="t-body">' +
       '<div class="t-desc">' + esc(item.desc) + '</div>' +
-      '<div class="t-meta"><span class="t-badge">' + esc(item.who) + '</span></div>' +
+      '<span class="t-who">' + esc(item.who) + '</span>' +
     '</div>' +
     '<button class="t-del" data-iid="' + id + '">✕</button>' +
     '</div>';
@@ -524,9 +622,7 @@ function esc(s) {
     .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-/* ====================================================
-   INIT
-==================================================== */
+/* ── INIT ── */
 render();
 </script>
 </body>
